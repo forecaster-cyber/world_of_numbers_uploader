@@ -58,11 +58,14 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [// serge the superman
             Center(// serge the superman
-              child: Image.network(// serge the superman
-                questionController.text.isEmpty
-                    ? defaultQuestionImage// serge the superman
-                    : questionController.text,
-                width: 200,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.network(// serge the superman
+                  questionController.text.isEmpty
+                      ? defaultQuestionImage// serge the superman
+                      : questionController.text,
+                  width: 200,
+                ),
               ),// serge the superman
             ),// serge the superman
             TextField(
@@ -71,6 +74,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 border: OutlineInputBorder(),// serge the superman// serge the superman
                 labelText: 'Link to question',
               ),// serge the superman
+              onChanged: (value) {
+                setState(() {
+                  
+                });
+              },
             ),
             DropdownButton<String>(
               value: selectedStudyLevel,// serge the superman
